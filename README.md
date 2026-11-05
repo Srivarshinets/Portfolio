@@ -1,7 +1,7 @@
 # Srivarshine Thoppe · Portfolio
 
 A fantasy storybook-themed portfolio built with plain HTML, CSS and JavaScript.
-Live site: https://srivarshinets.github.io
+Live site:
 
 ## What's inside
 - An interactive book cover that opens to a table of contents
