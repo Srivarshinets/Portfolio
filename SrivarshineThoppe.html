@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Srivarshine Thoppe · Computer Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,900;1,9..144,600&family=Alegreya:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E8E2F0; --ink:#2A1740; --muted:#5E4A78; --panel:#F7F3FB; --line:#B07A12; --rose:#C23A63;
+  --gold:#F2B544; --teal:#12353F; --paper:#F5E9D0;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#150F2A;--ink:#F5E9D0;--muted:#BFB0D8;--panel:#22183F;--line:#F2B544;--rose:#F07A9C;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#150F2A;--ink:#F5E9D0;--muted:#BFB0D8;--panel:#22183F;--line:#F2B544;--rose:#F07A9C;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.15rem/1.65 Alegreya,Georgia,serif}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;margin:0;line-height:1.1}
+a{color:var(--rose);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--rose);outline-offset:4px;border-radius:6px}
+.wrap{max-width:760px;margin:0 auto;padding:0 1.25rem}
+section{padding:3.5rem 0}
+.orn{display:block;margin:0 auto;width:150px;height:34px;color:var(--line)}
+
+.hero{position:relative;overflow:hidden;padding:3rem 0 7rem;text-align:center;background:radial-gradient(1.6px 1.6px at 8% 16%,#fff 55%,transparent 60%),radial-gradient(1.2px 1.2px at 22% 8%,#fff 55%,transparent 60%),radial-gradient(1.8px 1.8px at 35% 24%,#fff 55%,transparent 60%),radial-gradient(1.2px 1.2px at 52% 6%,#fff 55%,transparent 60%),radial-gradient(1.6px 1.6px at 66% 18%,#fff 55%,transparent 60%),radial-gradient(1.2px 1.2px at 78% 9%,#fff 55%,transparent 60%),radial-gradient(1.8px 1.8px at 90% 22%,#fff 55%,transparent 60%),radial-gradient(1.2px 1.2px at 14% 40%,#fff 55%,transparent 60%),radial-gradient(1.4px 1.4px at 88% 46%,#fff 55%,transparent 60%),linear-gradient(180deg,#0f0a24 0%,#2a1650 55%,#6b3578 100%)}
+.hero .wrap{position:relative;z-index:2}
+.trees{position:absolute;left:0;bottom:-1px;width:100%;height:110px;display:block;pointer-events:none}
+.tb{fill:#1b1038}.tf{fill:var(--bg)}
+.dragon{position:absolute;top:7%;left:6%;width:clamp(90px,22vw,150px);z-index:1;pointer-events:none;filter:drop-shadow(0 0 8px rgba(242,181,68,.55));animation:fly 28s linear infinite}
+@keyframes fly{0%{transform:translate(-30vw,40px)}30%{transform:translate(110vw,-30px)}100%{transform:translate(110vw,-30px)}}
+.wing{transform-box:fill-box;transform-origin:50% 100%;animation:flap .7s ease-in-out infinite alternate}
+@keyframes flap{to{transform:scaleY(.55)}}
+.ff{position:absolute;width:6px;height:6px;border-radius:50%;background:#ffe9a8;box-shadow:0 0 10px 3px rgba(255,214,102,.7);pointer-events:none;z-index:1;animation:drift 9s ease-in-out infinite}
+@keyframes drift{0%,100%{transform:translate(0,0);opacity:.2}50%{transform:translate(18px,-26px);opacity:1}}
+.spark{position:fixed;pointer-events:none;z-index:50;color:var(--gold);font-size:14px;text-shadow:0 0 6px var(--gold);animation:spk .9s forwards}
+@keyframes spk{to{opacity:0;transform:translateY(14px) scale(.4) rotate(40deg)}}
+.book{width:min(86vw,380px);aspect-ratio:3/4.2;margin:0 auto;position:relative;perspective:1600px}
+.pages{position:absolute;inset:0;background:var(--paper);color:#2A1740;border-radius:4px 14px 14px 4px;
+  padding:1.6rem 1.4rem;box-shadow:0 14px 30px rgba(0,0,0,.35);text-align:left;font-size:1.05rem;line-height:1.5;overflow:hidden}
+.pages h2{font-size:1.5rem;text-align:center;margin-bottom:.8rem}
+.pages ol{margin:0;padding:0;list-style:none}
+.pages li{border-bottom:1px dotted #8a6d3b;padding:.4rem 0}
+.pages a{color:#2A1740;text-decoration:none}
+.pages a:hover{color:#C23A63}
+.cover{position:absolute;inset:0;border:0;cursor:pointer;transform-origin:left center;
+  background:var(--teal);border-radius:4px 14px 14px 4px;box-shadow:0 14px 30px rgba(0,0,0,.4);
+  transition:transform 1.1s cubic-bezier(.6,.05,.2,1);backface-visibility:hidden;color:var(--paper);font:inherit;
+  display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:1.6rem 1.3rem}
+.cover::before{content:"";position:absolute;inset:.7rem;border:3px double var(--gold);border-radius:3px 10px 10px 3px;pointer-events:none}
+.cover::after{content:"";position:absolute;left:0;top:0;bottom:0;width:14px;background:linear-gradient(90deg,rgba(0,0,0,.35),transparent)}
+.book.open .cover{transform:rotateY(-165deg)}
+.cover small{font:italic 600 1.1rem Fraunces,serif;color:var(--gold);display:block;margin-top:.6rem}
+.cover b{font:900 clamp(2.1rem,9.5vw,2.8rem)/1.02 Fraunces,serif;color:var(--paper);display:block;margin:.3rem 0}
+.cover svg{width:100%;max-height:42%}
+.cover .tap{font-size:.95rem;color:var(--gold)}
+.star{animation:tw 3s ease-in-out infinite}
+.star:nth-child(2n){animation-delay:1.2s}.star:nth-child(3n){animation-delay:2.1s}
+@keyframes tw{50%{opacity:.25}}
+.tagline{font:600 italic 1.5rem/1.3 Fraunces,serif;max-width:28ch;margin:2rem auto .4rem;color:var(--paper)}
+.sub{color:#D9CCF0;margin:0}
+
+h2.ch{font-size:clamp(2rem,6vw,2.8rem);font-weight:900;text-align:center;margin-bottom:.4rem}
+.lead{text-align:center;color:var(--muted);margin:0 0 2rem;font-style:italic}
+.tale{background:var(--panel);border:3px double var(--line);border-radius:6px;padding:1.5rem 1.6rem;margin-bottom:1.6rem}
+.tale h3{font-size:1.55rem;font-weight:600;margin-bottom:.5rem}
+.tale h3 span{color:var(--rose);font-style:italic}
+.tale p{margin:0 0 .8rem}
+.tale p:first-of-type::first-letter{font:900 3.1rem/.8 Fraunces,serif;float:left;color:var(--rose);padding:.25rem .45rem 0 0}
+.tale ul.pts{margin:0 0 .8rem;padding-left:1.1rem}
+.tale ul.pts li{margin-bottom:.3rem}
+.runes{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:.6rem 0 0;list-style:none}
+.runes li{border:2px solid var(--line);border-radius:999px;padding:0 .8rem;font-size:.95rem}
+.honors{font-weight:500;color:var(--rose);margin:0 0 .8rem}
+
+.quest{display:grid;grid-template-columns:2.2rem 1fr;gap:1rem;margin-bottom:1.6rem}
+.quest i{font-style:normal;font-size:1.6rem;color:var(--line);text-align:center;position:relative}
+.quest:not(:last-child) i::after{content:"";position:absolute;left:50%;top:2.2rem;height:calc(100% + 1.4rem);border-left:3px dotted var(--line);opacity:.6}
+.quest h3{font-size:1.4rem;font-weight:600}
+.quest small{color:var(--muted);font-size:1rem}
+.quest ul{margin:.4rem 0 0;padding-left:1.1rem}
+.side{font:600 italic 1.3rem Fraunces,serif;text-align:center;margin:2.5rem 0 1.4rem;color:var(--muted)}
+
+.now{border:3px dashed var(--line);border-radius:6px;padding:1.4rem 1.6rem;background:var(--panel);margin-bottom:1.2rem;position:relative}
+.now h3{font-size:1.4rem;font-weight:600;margin-bottom:.3rem}
+.now p{margin:0}
+.now::before{content:"";position:absolute;top:-3px;right:1.4rem;width:20px;height:34px;background:var(--rose);clip-path:polygon(0 0,100% 0,100% 100%,50% 75%,0 100%)}
+
+.inv{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;padding:0;list-style:none;margin:0 0 1rem}
+.inv li{background:var(--panel);border:2px solid var(--line);border-radius:10px;padding:.2rem .9rem;transition:transform .15s}
+.inv li:hover{transform:rotate(-3deg) translateY(-3px)}
+.about p{margin:0 0 1rem}
+.raven{text-align:center}
+.btn{display:inline-block;background:var(--gold);color:#2A1740;border:3px solid #2A1740;border-radius:8px;padding:.7rem 1.6rem;
+  font:600 1.2rem Fraunces,serif;text-decoration:none;box-shadow:4px 4px 0 #2A1740;transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 #2A1740}
+.links{display:flex;gap:1.4rem;justify-content:center;margin-top:1.5rem;flex-wrap:wrap}
+footer{text-align:center;color:var(--muted);padding:1rem 1rem 3rem;font-style:italic}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="pine" viewBox="0 0 40 100"><path d="M20 0L32 30H26L36 55H28L40 85H23V100H17V85H0L12 55H4L14 30H8Z"/></symbol>
+<symbol id="divider" viewBox="0 0 150 34"><g fill="currentColor"><use href="#pine" x="22" y="6" width="12" height="28"/><use href="#pine" x="38" y="12" width="9" height="22"/><use href="#pine" x="116" y="6" width="12" height="28"/><use href="#pine" x="103" y="12" width="9" height="22"/><path d="M75 4a13 13 0 1 0 9 22a11 11 0 0 1-9-22z"/><circle cx="58" cy="10" r="1.5"/><circle cx="92" cy="8" r="1.5"/><circle cx="66" cy="28" r="1.2"/></g></symbol>
+</defs></svg>
+
+<header class="hero" id="top">
+  <svg class="dragon" viewBox="-14 -8 150 78" aria-hidden="true">
+    <path class="wing" d="M50 38C48 20 36 8 20 2C26 14 26 26 30 40Z" fill="#1d4d5c"/>
+    <path d="M8 44C22 38 40 40 58 36C70 33 78 26 88 24C94 18 100 14 108 14L116 10L114 17L128 20L114 24C108 30 98 34 90 36C80 40 66 46 52 48C36 52 20 52 8 44Z" fill="#2a5d6d"/>
+    <path d="M8 44C0 46-4 52-10 52L-6 57C2 57 8 53 14 48Z" fill="#2a5d6d"/>
+    <path class="wing" d="M60 36C60 16 48 4 34-4C44 8 42 22 44 38Z" fill="#3b7a8c"/>
+    <circle cx="108" cy="20" r="1.5" fill="#F2B544"/>
+  </svg>
+<div class="wrap">
+  <div class="book" id="book">
+    <div class="pages">
+      <h2>Contents</h2>
+      <ol>
+        <li><a href="#work">Chapter I: Things I’ve built</a></li>
+        <li><a href="#quests">Chapter II: Quests completed</a></li>
+        <li><a href="#now">Chapter III: The story so far, and next</a></li>
+        <li><a href="#about">Chapter IV: The author</a></li>
+        <li><a href="#raven">Chapter V: Send a raven</a></li>
+      </ol>
+    </div>
+    <button class="cover" id="cover" aria-expanded="false" aria-label="Open the book">
+      <span><small>The tale of</small><b>Srivarshine<br>Thoppe</b><small>a computer engineer’s first volume</small></span>
+      <svg viewBox="0 0 300 130" aria-hidden="true">
+        <circle cx="228" cy="38" r="22" fill="#F2B544"/><circle cx="238" cy="32" r="20" fill="#12353F"/>
+        <g fill="#F5E9D0"><circle class="star" cx="40" cy="20" r="2"/><circle class="star" cx="95" cy="40" r="1.6"/><circle class="star" cx="150" cy="14" r="2.2"/><circle class="star" cx="190" cy="52" r="1.5"/><circle class="star" cx="270" cy="70" r="1.8"/><circle class="star" cx="20" cy="66" r="1.6"/></g>
+        <path d="M0 130V98l30-14 30 14V78h14V64l8-8 8 8v14h14v20l22-10 22 10v-18h12V60l10-12 10 12v20h12v20l24-8 24 8v30z" fill="#3B1F4A"/>
+        <path d="M0 130v-14l40-8 50 10 60-12 70 10 80-8v22z" fill="#0b1f26"/>
+      </svg>
+      <span class="tap">Tap to open</span>
+    </button>
+  </div>
+  <p class="tagline">I turn data and models into things people can actually use.</p>
+  <p class="sub">Computer engineering graduate, CGPA 9.31 · Open to data, AI roles</p>
+</div>
+<svg class="trees" viewBox="0 0 1200 140" preserveAspectRatio="none" aria-hidden="true"><use class="tb" href="#pine" x="-20" y="65" width="30" height="75"/><use class="tb" href="#pine" x="50" y="40" width="40" height="100"/><use class="tb" href="#pine" x="120" y="55" width="34" height="85"/><use class="tb" href="#pine" x="190" y="65" width="30" height="75"/><use class="tb" href="#pine" x="260" y="40" width="40" height="100"/><use class="tb" href="#pine" x="330" y="55" width="34" height="85"/><use class="tb" href="#pine" x="400" y="65" width="30" height="75"/><use class="tb" href="#pine" x="470" y="40" width="40" height="100"/><use class="tb" href="#pine" x="540" y="55" width="34" height="85"/><use class="tb" href="#pine" x="610" y="65" width="30" height="75"/><use class="tb" href="#pine" x="680" y="40" width="40" height="100"/><use class="tb" href="#pine" x="750" y="55" width="34" height="85"/><use class="tb" href="#pine" x="820" y="65" width="30" height="75"/><use class="tb" href="#pine" x="890" y="40" width="40" height="100"/><use class="tb" href="#pine" x="960" y="55" width="34" height="85"/><use class="tb" href="#pine" x="1030" y="65" width="30" height="75"/><use class="tb" href="#pine" x="1100" y="40" width="40" height="100"/><use class="tb" href="#pine" x="1170" y="55" width="34" height="85"/><use class="tb" href="#pine" x="1240" y="65" width="30" height="75"/><use class="tf" href="#pine" x="10" y="80" width="24" height="60"/><use class="tf" href="#pine" x="105" y="58" width="33" height="82"/><use class="tf" href="#pine" x="200" y="70" width="28" height="70"/><use class="tf" href="#pine" x="295" y="50" width="36" height="90"/><use class="tf" href="#pine" x="390" y="80" width="24" height="60"/><use class="tf" href="#pine" x="485" y="58" width="33" height="82"/><use class="tf" href="#pine" x="580" y="70" width="28" height="70"/><use class="tf" href="#pine" x="675" y="50" width="36" height="90"/><use class="tf" href="#pine" x="770" y="80" width="24" height="60"/><use class="tf" href="#pine" x="865" y="58" width="33" height="82"/><use class="tf" href="#pine" x="960" y="70" width="28" height="70"/><use class="tf" href="#pine" x="1055" y="50" width="36" height="90"/><use class="tf" href="#pine" x="1150" y="80" width="24" height="60"/><rect class="tf" x="0" y="124" width="1200" height="16"/></svg>
+</header>
+
+<main>
+<section id="work"><div class="wrap">
+  <svg class="orn" aria-hidden="true" viewBox="0 0 150 34"><use href="#divider"/></svg>
+  <h2 class="ch">Chapter I</h2>
+  <p class="lead">Things I’ve built</p>
+
+  <article class="tale">
+    <h3><span>The one with a patent application,</span> Healing Hands</h3>
+    <p>A yoga mudra detection and correction system that runs entirely in the browser, classifying hand poses from a live webcam feed with 90% accuracy. Built as a team; I developed the frontend and collected the training dataset.</p>
+    <p class="honors">IEEE paper · Recognized by KSCST and Art Park–IISc · Patent application filed</p>
+    <ul class="runes"><li>TensorFlow.js</li><li>OpenCV</li><li>NumPy</li><li>JavaScript</li></ul>
+    <p style="margin-top:.8rem"><a href="https://yoga-mudra-web.vercel.app/">Try the site yourself</a></p>
+  </article>
+
+  <article class="tale">
+    <h3><span>The fast one,</span> F1 Telemetry Dashboard</h3>
+    <p>A comparative analysis tool for race telemetry. It pulls real-time and historical data from the FastF1 API, cleans it with Pandas, stores it in MySQL, and compares speed, throttle, brake, gear and distance across drivers. I scoped and delivered it end to end.</p>
+    <ul class="runes"><li>Python</li><li>Pandas</li><li>MySQL</li><li>Matplotlib</li></ul>
+    <p style="margin-top:.8rem"><a href="https://github.com/Srivarshinets/Comparative-F1-telemetry-analysis">See the code on GitHub</a></p>
+  </article>
+
+  <article class="tale">
+    <h3><span>The sharp-eyed one,</span> Image Classification</h3>
+    <p>A supervised image classifier with preprocessing and data augmentation, tuned over several rounds of evaluation until it hit 90% accuracy on held-out test data.</p>
+    <ul class="runes"><li>TensorFlow</li><li>Keras</li><li>Python</li></ul>
+  </article>
+
+  <article class="tale">
+    <h3><span>The one with a pulse,</span> Cardiac Monitor</h3>
+    <p>A heart rate monitor on an Arduino Uno. It reads the analog pulse sensor signal, calculates BPM in embedded C, and shows the live reading on an LCD.</p>
+    <ul class="runes"><li>Arduino</li><li>Embedded C</li></ul>
+  </article>
+</div></section>
+
+<section id="quests"><div class="wrap">
+  <svg class="orn" aria-hidden="true" viewBox="0 0 150 34"><use href="#divider"/></svg>
+  <h2 class="ch">Chapter II</h2>
+  <p class="lead">Quests completed</p>
+
+  <div class="quest"><i aria-hidden="true">⚔</i><div>
+    <h3>Data Analytics Intern, Skyllx Technologies</h3><small>Jan 2026 to May 2026 · Bengaluru</small>
+    <ul>
+      <li>Built Python pipelines with Pandas and NumPy that cut data inconsistencies before analysis.</li>
+      <li>Wrote SQL queries to pull and aggregate data, reducing manual reporting time.</li>
+      <li>Designed and deployed interactive Power BI dashboards used for ongoing stakeholder reporting.</li>
+      <li>Connected analytics pipelines to front-end components so analysis became usable product features.</li>
+    </ul>
+  </div></div>
+
+  <div class="quest"><i aria-hidden="true">✧</i><div>
+    <h3>AI Intern, AICTE · TechSaksham</h3><small>Nov 2024 to Dec 2024 · Remote</small>
+    <ul>
+      <li>Completed an industry programme on AI and worked through an end-to-end machine learning workflow on a domain-specific problem in Google Colab.</li>
+    </ul>
+  </div></div>
+
+  <p class="side">Side quests</p>
+
+  <div class="quest"><i aria-hidden="true">♜</i><div>
+    <h3>Event Head, QuantumX’25</h3><small>Jan 2025 to Apr 2025</small>
+    <ul><li>Led “Pitchers”, a startup pitch competition where student teams presented to venture capitalists. Planned it end to end, moderated sessions and ran Q&amp;A.</li></ul>
+  </div></div>
+
+  <div class="quest"><i aria-hidden="true">✎</i><div>
+    <h3>Board Member, Art Club</h3><small>2023 to 2024</small>
+    <ul><li>Organized and coordinated Art Charades at Initium’24.</li></ul>
+  </div></div>
+</div></section>
+
+<section id="now"><div class="wrap">
+  <svg class="orn" aria-hidden="true" viewBox="0 0 150 34"><use href="#divider"/></svg>
+  <h2 class="ch">Chapter III</h2>
+  <p class="lead">Currently working on</p>
+  <div class="now">
+    <h3>Learning with the Claude courses</h3>
+    <p>Working through Anthropic’s Claude courses to understand how large language models are used and built with.</p>
+  </div>
+  <div class="now">
+    <h3>Building mini LLM projects</h3>
+    <p>Turning what I learn into small, working projects, so every lesson ends up as something I can run and show.</p>
+  </div>
+  <div class="now">
+    <h3>Building a personal finance tracker</h3>
+    <p>Finance mobile app that uses an AI model to capture the details from the image of the receipt and automatically transform it to spreadsheet data.</p>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap about">
+  <svg class="orn" aria-hidden="true" viewBox="0 0 150 34"><use href="#divider"/></svg>
+  <h2 class="ch">Chapter IV</h2>
+  <p class="lead">The author</p>
+  <p>I’m a computer engineering graduate from New Horizon College of Engineering in Bengaluru, with a CGPA of 9.31. I work across the whole path from raw data to a finished product: collecting and cleaning data, training models, and building the interface people actually touch.</p>
+  <p>I’m a reader and a dreamer at heart, a fan of fantasy worlds and anything with a map at the front, and dragons, obviously. I like building things that feel a little bit magical, and I’ll happily tell you about the books behind this page.</p>
+  <ul class="inv" aria-label="Skills">
+    <li>Python</li><li>SQL</li><li>JavaScript</li><li>HTML/CSS</li><li>Pandas</li><li>NumPy</li><li>Matplotlib</li><li></li>OpenCV</li><li>TensorFlow</li><li>Power BI</li><li>MySQL</li><li>MongoDB</li><li>GitHub</li>
+  </ul>
+  <p style="text-align:center;color:var(--muted);font-size:1rem">Certified in IBM SkillsBuild User Experience Design Fundamentals, IBM SkillsBuild Generative AI in Action, and NPTEL Cloud Computing.</p>
+</div></section>
+
+<section id="raven" class="raven"><div class="wrap">
+  <svg class="orn" aria-hidden="true" viewBox="0 0 150 34"><use href="#divider"/></svg>
+  <h2 class="ch">Chapter V</h2>
+  <p class="lead">Send a raven</p>
+  <a class="btn" href="mailto:varshinethoppe@outlook.com">Email me</a>
+  <div class="links"><a href="https://github.com/Srivarshinets">GitHub</a><a href="https://www.linkedin.com/in/srivarshine-thoppe-415ab7289/">LinkedIn</a></div>
+</div></section>
+</main>
+<footer>The end, for now. Here be dragons, and a few good projects. Written and built by Srivarshine, 2026.</footer>
+
+<script>
+(function(){
+  var book=document.getElementById('book'), cover=document.getElementById('cover');
+  cover.addEventListener('click',function(){
+    var open=book.classList.toggle('open');
+    cover.setAttribute('aria-expanded',open);
+    cover.setAttribute('aria-label',open?'Close the book':'Open the book');
+    cover.style.pointerEvents=open?'none':'auto';
+    if(open){setTimeout(function(){cover.style.pointerEvents='auto'},1200)}
+  });
+})();
+</script>
+<script>
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var hero=document.getElementById('top');
+  for(var i=0;i<12;i++){
+    var f=document.createElement('span');f.className='ff';
+    f.style.left=(6+Math.random()*88)+'%';f.style.top=(14+Math.random()*58)+'%';
+    f.style.animationDuration=(6+Math.random()*6)+'s';f.style.animationDelay=(-Math.random()*8)+'s';
+    hero.appendChild(f);
+  }
+  var last=0,marks=['✦','✧','·'];
+  document.addEventListener('pointermove',function(e){
+    if(e.pointerType!=='mouse')return;
+    var t=Date.now();if(t-last<70)return;last=t;
+    var s=document.createElement('span');s.className='spark';
+    s.textContent=marks[Math.floor(Math.random()*3)];
+    s.style.left=(e.clientX+Math.random()*10-5)+'px';s.style.top=(e.clientY+Math.random()*10-5)+'px';
+    document.body.appendChild(s);setTimeout(function(){s.remove()},900);
+  });
+})();
+</script>
+</body>
+</html>
